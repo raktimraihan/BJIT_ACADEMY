@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>User Registration</title>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div align="center">
+    <h1>View User</h1>
+    <table id = "customers">
+    <thead>
+        <tr>
+            <th> UserName </th>
+            <th> Name </th>
+            <th> Address </th>
+            <th> Date of Joining </th>
+            <th> role </th>
+        </tr>
+    </thead>
+    <tbody>
+	<tr th:if="${empList.empty}">
+            <td colspan="2"> No Books Available </td>
+        </tr>
+        <tr th:each="emp : ${empList}">
+            <td><span th:text="${emp.userName}"> User Name </span></td>
+            <td><span th:text="${emp.name}"> Name </span></td>
+            <td><span th:text="${emp.address}"> Address </span></td>
+            <td><span th:text="${emp.dateOfJoining}"> Date of Joining </span></td>
+            <td><span th:text="${emp.role}"> Role </span></td>
+        </tr>
+    </tbody>
+</table>
+    
+</div>
+</body>
+</html>

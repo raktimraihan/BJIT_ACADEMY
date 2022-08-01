@@ -1,0 +1,108 @@
+Question 01. What are the types of variables in JAVA? Explain with examples please.
+
+Answer:
+There are four types of variables in JAVA. 
+
+a) Instance Variable: Variables which are declared outside the constructors, methods or blocks but within the class
+	is known as Instance variables. Instance variables are instantiated when an object of that class is created.
+	Instance variables are accessible to all constractors and methods within the class body. 
+	Example:
+		public class Bank{
+			//Instance Variables
+			private int bankID;
+			private String bankName;
+		}
+
+b) Local Variable: The variables that are declared within the body of a method is called local variables. Other methods
+	can not access these variables as other methods are not aware of the existence of a local variable declared within
+	method block. It is better to instanciated a local variable before using it.
+	Example:
+		public class Bank{
+			private int bankID;
+			private String bankName;
+			private int interestRate;
+
+			public int getTotalAmmount(int amount){
+				//Local variables
+				int totalMonth = 36;
+				return totalMonth*interestRate*amount;
+			}
+
+		}
+
+c) Class Variable: A class variables is declared with the static modifier. Regardless of how many instances of that 
+	class exists, a single copy of class variables is always exists. 
+	Example:
+		public class Bank{
+			private int bankID;
+			private String bankName;
+			private int interestRate;
+			//class variables
+			private static String institutionType = "Bank";
+			public int getTotalAmmount(int amount){
+				//Local variables
+				int totalMonth = 36;
+				return totalMonth*interestRate*amount;
+			}
+
+		}
+
+
+d) Parameters: Parameters act as variables inside the methods. The method can use the parameter for determining the
+	final result or returning the result. Parameters are specified inside the parentheses. 
+	public class Bank{
+			private int bankID;
+			private String bankName;
+			private int interestRate;
+			//class variables
+			private static String institutionType = "Bank";
+			//amount is the parameter here mentioned inside parentheses
+			public int getTotalAmmount(int amount){
+				//Local variables
+				int totalMonth = 36;
+				return totalMonth*interestRate*amount;
+			}
+
+		}
+
+2. What is the benefits of a Static method in JAVA?
+
+Answer:
+	a) Static methods can be used without creating an object as it belongs to the class level.
+	b) Static methods are initialized when class is loaded, and it is quick to call.
+	c) Static methods are globally unique.
+	d) Unique in memory and resides in memory after class is loaded.
+
+3. What are the purposes of Constructor in JAVA?
+
+Answer: 
+	a) Using constructor, an object of a class is created.
+	b) Constructor is used to define the object in initial state.
+	c) Constructors let the user know about dependencies. User can identify of the requirements before using it.
+
+4. Write a code in JAVA to compare three integer values and show which one is the largest number.
+
+Answer:
+	import java.util.*;
+public class Question04 {
+	
+	
+	public static void main(String[] args) {
+		//define scanner object
+		Scanner scanner = new Scanner(System.in);
+		
+		//read three values from the console and store them in separate variables
+		System.out.println("Enter the first value: ");
+		int firstValue = scanner.nextInt();
+		System.out.println("Enter the Second value: ");
+		int secondValue = scanner.nextInt();
+		System.out.println("Enter the third value: ");
+		int thirdValue = scanner.nextInt();
+		
+		//Implement the logic using if else 
+		if(firstValue >= secondValue && firstValue >= thirdValue) System.out.println("Largest Value: "+firstValue);
+		else if (firstValue <= secondValue && secondValue >= thirdValue) System.out.println("Largest Value: "+secondValue);
+		else if (firstValue <= thirdValue && secondValue <= thirdValue) System.out.println("Largest Value: "+thirdValue);
+		else System.out.println("Can't determine!");
+	}
+}

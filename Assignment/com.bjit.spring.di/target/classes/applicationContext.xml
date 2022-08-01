@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="studentbean" class="com.bjit.spring.di.services.Student">
+	<constructor-arg value="Raktim"></constructor-arg>
+</bean>
+
+<bean id="combustionbean" class="com.bjit.spring.di.services.CombustionEngine"></bean>
+<bean id="electricbean" class="com.bjit.spring.di.services.ElectricalEngine"></bean>
+
+<bean id="carbean" class="com.bjit.spring.di.consumer.Car">
+	<constructor-arg value="Fiat"></constructor-arg>
+	<constructor-arg> <ref bean="combustionbean"/> </constructor-arg>
+</bean> 
+
+<bean id="carbean01" class="com.bjit.spring.di.consumer.Car">
+	<constructor-arg value="Toyota E"></constructor-arg>
+	<constructor-arg> <ref bean="electricbean"/> </constructor-arg>
+</bean>   
+
+<bean id="bikebean" class="com.bjit.spring.di.consumer.Bike">
+	<property name="bikeName" value="Yamaha Rx-100"></property>
+	<property name="engineType" ref="combustionbean"> </property>	
+</bean> 
+
+</beans>

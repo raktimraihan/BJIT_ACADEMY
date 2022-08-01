@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: raktim
+Build-Jdk: 18.0.1.1
+Implementation-Title: Spring Boot Spring Data JPA
+Implementation-Version: 1.0
+Implementation-Vendor-Id: org.springframework.boot
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-data-jpa
+Created-By: Maven Integration for Eclipse
+
